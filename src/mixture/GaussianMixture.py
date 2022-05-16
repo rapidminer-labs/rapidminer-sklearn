@@ -5,12 +5,11 @@ from sklearn.mixture import GaussianMixture
 def rm_train(X, params):
     print(params)
     model = GaussianMixture(**params).fit(X)
-    anom = model.bic(X)
-    return {"model": model, "bic": anom}
+    bic_score = model.bic(X)
+    return model, pd.DataFrame({"BIC": bic_score},index=[1])
 
 
-def rm_apply(X, container):
-    model = container['model']
+def rm_apply(X, model):
     prediction = pd.DataFrame(model.score_samples(X))
     prediction.columns = ['Anomaly_Score']
     return prediction

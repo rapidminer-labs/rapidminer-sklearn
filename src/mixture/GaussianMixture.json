@@ -1,6 +1,6 @@
 {
   "name": "Gaussian Mixture Model ",
-  "dropSpecial" : true,
+  "dropSpecial": true,
   "capabilities": [
     "numerical attributes",
     "unlabeled"
@@ -73,6 +73,14 @@
       "description": "The number of base estimators in the ensemble.",
       "value": 100,
       "optional": false
+    }
+  ],
+  "inputs": [
+  ],
+  "outputs": [
+    {
+      "name": "Performance",
+      "type": "table"
     }
   ]
 }
